@@ -8,7 +8,7 @@ The project focuses on real-world backend concepts such as authentication, autho
 
 ## 🌍 Live Demo
 
-🔗 **Live Application:** https://stayease-dk67.onrender.com  
+🔗 **Live Application:** https://stayease-dks7.onrender.com
 
 ---
 
