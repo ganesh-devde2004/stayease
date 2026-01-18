@@ -7,6 +7,10 @@ const multer = require("multer");
 const { storage } = require("../cloudinary/index.js");
 const upload = multer({ storage });
 
+
+//new route
+router.get("/new", isLoggedIn, wrapAsync(listingController.renderNewForm));
+
 router
   .route("/")
   .get(wrapAsync(listingController.index))
