@@ -1,0 +1,78 @@
+<% layout('/layouts/boilerplate') -%>
+  <div class="filters-wrapper navbar navbar-expand-md bg-body-light sticky-top border-bottom">
+    <button class="scroll-btn left" onclick="scrollFilters(-200)">
+      &#8249;
+    </button>
+
+    <div class="filters-scroll" id="filtersScroll">
+      <a href="/listings/category/Rooms" class="filter-item">
+        <i class="fa-solid fa-bed"></i>
+        <span>Rooms</span>
+      </a>
+      <a href="/listings/category/Mountains" class="filter-item">
+        <i class="fa-solid fa-mountain"></i>
+        <span>Mountains</span>
+      </a>
+      <a href="/listings/category/Camping" class="filter-item">
+        <i class="fa-solid fa-campground"></i>
+        <span>Camping</span>
+      </a>
+      <a href="/listings/category/Trending" class="filter-item">
+        <i class="fa-solid fa-fire"></i>
+        <span>Trending</span>
+      </a>
+      <a href="/listings/category/Pool" class="filter-item">
+        <i class="fa-solid fa-person-swimming"></i>
+        <span>Pool</span>
+      </a>
+      <a href="/listings/category/Cities" class="filter-item">
+        <i class="fa-solid fa-city"></i>
+        <span>Cities</span>
+      </a>
+      <a href="/listings/category/Castles" class="filter-item">
+        <i class="fa-solid fa-fort-awesome"></i>
+        <span>Castles</span>
+      </a>
+      <a href="/listings/category/Farm" class="filter-item">
+        <i class="fa-solid fa-tractor"></i>
+        <span>Farm</span>
+      </a>
+      <a href="/listings/category/Arctic" class="filter-item">
+        <i class="fa-solid fa-snowflake"></i>
+        <span>Arctic</span>
+      </a>
+    </div>
+
+    <button class="scroll-btn right" onclick="scrollFilters(200)">
+      &#8250;
+    </button>
+
+    <div class="tax-toggle">
+     <div class="form-check form-switch form-check-reverse">
+      <span>Display total before taxes</span>
+      <input type="checkbox" class="form-check-input" id="switchCheckReverse" />
+     </div>
+   </div>
+  </div>
+
+  <div class="row row-cols-xl-4 row-cols-md-3 row-cols-sm-2 row-cols-1 mt-3">
+  <% for(let listing of allListing) { %>
+    <a href="/listings/<%=listing._id%>" class="card-link">
+      <div class="card col">
+        <img
+          src="<%=listing.image.url %>"
+          class="card-img-top"
+          alt="listingImage"
+          style="height: 20rem"
+        />
+        <div class="card-body">
+          <p class="card-text">
+            <b><%= listing.title %></b> <br />
+            &#x20B9; <%=(listing.price||0).toLocaleString("en-IN") %> /Night
+            <i class="tax-info"> &nbsp; &nbsp;+18% GST</i>
+          </p>
+        </div>
+      </div>
+    </a>
+   <% } %>
+  </div>
