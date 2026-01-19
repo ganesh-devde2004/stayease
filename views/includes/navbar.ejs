@@ -1,45 +1,38 @@
 
 <nav class="navbar navbar-expand-md navbar-light bg-body-light sticky-top border-bottom">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/listings"
+  <div class="container-fluid navbar-main">
+
+    <a class="navbar-brand fw-bold" href="/listings"
       ><i class="fa-solid fa-house"></i>StayEase</a
     >
+    <form role="search" action="/listings" method="GET" class="search-form">
+      <input class="form-control search-input" name="search" type="search" placeholder="Search  destinations" aria-label="Search"/>
+      <button class="btn search-btn" type="submit">Search</button>
+     </form>
+  
     <button
-      class="navbar-toggler ms-auto"
+      class="navbar-toggler"
       type="button"
       data-bs-toggle="collapse"
       data-bs-target="#navbarNavAltMarkup"
     >
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link" href="/listings">Explore</a>
-      </div>
-
-      
-      <div class="navbar-nav ms-auto">
-        <form class="d-flex" role="search" action="/listings" method="GET">
-          <input class="form-control me-2 search-input" name="search" type="search" placeholder="Search  destinations" aria-label="Search"/>
-          <button class="btn btn-outline-success search-btn" type="submit">Search</button>
-        </form>
-      </div>
-
-      <div class="navbar-nav ms-auto">
-        <a class="nav-link" href="/listings/new">Stayease your home</a>
+      <div class="navbar-nav ms-auto text-md-center">
+        <a class="nav-link" href="/listings"><i class="fa-solid fa-compass me-1"></i>Explore</a>
         <% if(!userLog) {%>
-        <a class="nav-link" href="/signup">
-          <i class="fa-regular fa-user"></i><b>Signup</b></a
+        <a class="nav-link" href="/signup">Signup</a
         >
-        <a class="nav-link" href="/login"
-          ><i class="fa-solid fa-right-to-bracket"></i><b> Login</b></a
+        <a class="nav-link" href="/login">Login</a
         >
         <% } %> <% if(userLog){%>
-        <a class="nav-link" href="/logout"
-          ><i class="fa-solid fa-arrow-right-from-bracket"></i> <b>Logout</b></a
+        <a class="nav-link" href="/listings/new">Stayease your home</a>
+        <a class="nav-link" href="/logout">Logout</a
         >
         <% } %>
-      </div>
+     </div>
     </div>
   </div>
 </nav>
